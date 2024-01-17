@@ -1,5 +1,6 @@
 package com.mycompany.propertymanagement.controller;
 
+import com.mycompany.propertymanagement.dto.CalculatorDTO;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,6 +20,13 @@ public class CalculatorController {
         else {
             result = n2 -n1;
         }
+        return result;
+    }
+
+    @PostMapping("/mul")
+    public Double multiply(@RequestBody CalculatorDTO calculatorDTO){
+        Double result = null;
+        result = calculatorDTO.getN1() * calculatorDTO.getN2() * calculatorDTO.getN3();
         return result;
     }
 }
