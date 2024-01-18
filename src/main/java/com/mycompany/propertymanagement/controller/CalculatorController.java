@@ -13,6 +13,10 @@ public class CalculatorController {
     public Double add(@RequestParam("n1") Double n1, @RequestParam("n2") Double n2){
         return n1 + n2;
     }
+
+
+
+
     @GetMapping("/sub/{n1}/{n2}")// map the values of url to java variables by Path variables
     public Double substract(@PathVariable("n1") Double n1, @PathVariable("n2") Double n2){
         Double result = null;
@@ -24,6 +28,7 @@ public class CalculatorController {
         }
         return result;
     }
+
 
     @PostMapping("/mul")
     public ResponseEntity<Double> multiply(@RequestBody CalculatorDTO calculatorDTO){
